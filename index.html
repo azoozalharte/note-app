@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>اِستَذكَرَ</title>
+  </head>
+  <body class="bg-yellow-100">
+    <nav class="flex items-center bg-yellow-200 py-4 px-10">
+      <h1 class="text-3xl font-extrabold text-yellow-800">اِستَذكَرَ</h1>
+    </nav>
+    <div class="container mx-auto mt-10">
+      <div class="flex justify-center">
+        <input
+          type="text"
+          id="fillter-notes"
+          class="mb-10 block bg-yellow-50 border-4 border-yellow-300 rounded-full w-1/2 p-3 pr-4"
+          placeholder="بحث"
+        />
+      </div>
+      <div id="notes" class="flex justify-center flex-wrap mb-10 gap-6">
+        <!-- <div class="card">
+          <div class="title">Azooz</div>
+          <div class="card-body">sdjdklsjaskdjksjdk</div>
+
+          <button class="delete-button">
+            <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
+          </button>
+          <a href="create.html" class="absolute bottom-2 right-8"
+            ><ion-icon
+              name="create-outline"
+              class="text-blue-500 text-xl font-bold"
+            ></ion-icon
+          ></a>
+        </div> -->
+      </div>
+
+      <div class="flex justify-center px-5">
+        <button
+          class="text-center bg-yellow-500 py-2 px-4 rounded-full transition-all duration-300 hover:bg-yellow-600 text-white font-bold"
+          id="add-note"
+        >
+          إضافة مذكرة جديدة
+        </button>
+      </div>
+    </div>
+    <script src="js/uuidv4.js"></script>
+    <script src="js/notes-functions.js"></script>
+    <script src="js/notes-app.js"></script>
+
+    <!-- IONICON -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

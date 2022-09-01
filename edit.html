@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>اِستَذكَرَ</title>
+  </head>
+  <body class="bg-yellow-100">
+    <nav class="flex items-center bg-yellow-200 py-4 px-10">
+      <h1 class="text-3xl font-extrabold text-yellow-800">اِستَذكَرَ</h1>
+    </nav>
+    <div class="container mx-auto mt-10 text-center">
+      <h1 class="mb-10 text-2xl md:text-4xl font-extrabold text-yellow-600">
+        تعديل المذكرة
+      </h1>
+      <form action="" class="flex flex-col items-center" id="edit-form">
+        <input
+          type="text"
+          class="mb-5 rounded-full w-1/2 py-4 px-5 bg-yellow-50 border-2 border-yellow-300"
+          name="title"
+          placeholder="بحث"
+        />
+        <textarea
+          name="cardBody"
+          class="w-1/2 rounded-xl bg-yellow-50 border-2 border-yellow-300 py-4 px-5"
+          id=""
+          cols="20"
+          rows="10"
+        ></textarea>
+        <button
+          class="text-center bg-yellow-500 py-2 px-4 rounded-full transition-all duration-300 hover:bg-yellow-600 text-white font-bold mt-10"
+          id="add-note"
+        >
+          تعديل
+        </button>
+      </form>
+    </div>
+    <script src="js/notes-functions.js"></script>
+    <script src="js/edit-note.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+  @apply flex justify-center shadow-lg items-center flex-col bg-yellow-200 p-10 rounded-xl w-80 text-center relative;
+}
+.title {
+  @apply text-2xl text-yellow-800 font-bold mb-3;
+}
+.card-body {
+  @apply text-sm text-gray-600 font-semibold;
+}
+
+.delete-button {
+  @apply absolute bottom-2 right-2;
+}
+
+.delete-icon {
+  @apply text-red-500 text-xl font-bold;
+}
+
+.edit-page {
+  @apply absolute bottom-2 right-8;
+}
+
+.edit-icon {
+  @apply text-blue-500 text-xl font-bold;
+}
