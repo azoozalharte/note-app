@@ -55,9 +55,11 @@ const renderNotesDOM = function (note) {
   deleteButton.appendChild(deleteIcon);
 
   deleteButton.addEventListener("click", function () {
-    removeNote(note.id);
-    localStorage.setItem("notes", JSON.stringify(notes));
-    render(notes, filters);
+    if (confirm("من جدك تبغا تحذفها؟")) {
+      removeNote(note.id);
+      localStorage.setItem("notes", JSON.stringify(notes));
+      render(notes, filters);
+    }
   });
 
   //Edit Ancor
