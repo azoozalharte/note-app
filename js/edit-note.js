@@ -1,8 +1,15 @@
+moment.locale("ar_SA");
 const noteId = location.hash.substr(1);
 const notes = savedNotes();
 
 const noteIndex = notes.findIndex((note) => note.id === noteId);
 const createdAt = notes[noteIndex].createdAt;
+
+if (notes[noteIndex].createdAt != notes[noteIndex].updatedAt) {
+  document.querySelector(".edited").innerHTML = `تم تعديل المذكرة ${moment(
+    notes[noteIndex].updatedAt
+  ).fromNow()}`;
+}
 
 // fill forms with data
 document.querySelector("input").value = notes[noteIndex].title;

@@ -1,5 +1,8 @@
 const notes = savedNotes();
-
+const filters = {
+  searchFillter: "",
+  sortBy: "",
+};
 render(notes, filters);
 
 // Button
@@ -15,3 +18,9 @@ document
     filters.searchFillter = e.target.value;
     render(notes, filters);
   });
+
+//filter by something
+document.querySelector("#filter-by").addEventListener("change", function (e) {
+  filters.sortBy = e.target.value;
+  render(notes, filters);
+});

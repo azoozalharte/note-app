@@ -27,3 +27,7 @@
 .edit-icon {
   @apply text-blue-500 text-xl font-bold;
 }
+
+.edited {
+  @apply text-xs text-gray-600 mb-2;
+}

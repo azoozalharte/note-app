@@ -1,6 +1,3 @@
-const filters = {
-  searchFillter: "",
-};
 // get saved notes from localStroage
 
 const savedNotes = function () {
@@ -13,8 +10,36 @@ const savedNotes = function () {
   }
 };
 
+const notesFilter = function (notes, sortBy) {
+  if (sortBy === "byEdited") {
+    return notes.sort((note1, note2) => {
+      if (note1.updatedAt > note2.updatedAt) {
+        return -1;
+      }
+    });
+  } else if (sortBy === "byCreated") {
+    return notes.sort((note1, note2) => {
+      if (note1.createdAt > note2.createdAt) {
+        return -1;
+      } else if (note1.createdAt < note2.createdAt) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+  } else {
+    return notes.sort((note1, note2) => {
+      if (note1.createdAt < note2.createdAt) {
+        return -1;
+      }
+    });
+  }
+};
+
 // render
 const render = function (notes, filters) {
+  notes = notesFilter(notes, filters.sortBy);
+  console.log(notes);
   const renderdNotes = notes.filter((note) => {
     return note.title
       .toLowerCase()
@@ -76,13 +101,13 @@ const renderNotesDOM = function (note) {
 
   // <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
 
-  if (note.title.length > 0) {
+  if (note.title.trim().length > 0) {
     noteTitle.textContent = note.title;
   } else {
     noteTitle.textContent = "مذكرة فارغه";
   }
 
-  if (note.body.length > 0) {
+  if (note.body.trim().length > 0) {
     noteBody.textContent = note.body;
   } else {
     noteBody.textContent =
