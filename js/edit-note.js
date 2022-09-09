@@ -15,7 +15,7 @@ if (notes[noteIndex].createdAt != notes[noteIndex].updatedAt) {
 document.querySelector("input").value = notes[noteIndex].title;
 document.querySelector("textarea").value = notes[noteIndex].body;
 
-document.querySelector("#edit-form").addEventListener("submit", function (e) {
+document.querySelector("#edit-form").addEventListener("submit", (e) => {
   e.preventDefault();
   if (
     e.target.title.value != notes[noteIndex].title ||

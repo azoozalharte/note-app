@@ -1,6 +1,6 @@
 // get saved notes from localStroage
 
-const savedNotes = function () {
+const savedNotes = () => {
   // check if localStroge has notes
   const noteJSON = localStorage.getItem("notes");
   if (noteJSON != null) {
@@ -10,7 +10,7 @@ const savedNotes = function () {
   }
 };
 
-const notesFilter = function (notes, sortBy) {
+const notesFilter = (notes, sortBy) => {
   if (sortBy === "byEdited") {
     return notes.sort((note1, note2) => {
       if (note1.updatedAt > note2.updatedAt) {
@@ -37,7 +37,7 @@ const notesFilter = function (notes, sortBy) {
 };
 
 // render
-const render = function (notes, filters) {
+const render = (notes, filters) => {
   notes = notesFilter(notes, filters.sortBy);
   console.log(notes);
   const renderdNotes = notes.filter((note) => {
@@ -56,7 +56,7 @@ const render = function (notes, filters) {
 
 // reander DOM
 
-const renderNotesDOM = function (note) {
+const renderNotesDOM = (note) => {
   // card
   const card = document.createElement("div");
   card.classList.add("card");
@@ -79,7 +79,7 @@ const renderNotesDOM = function (note) {
 
   deleteButton.appendChild(deleteIcon);
 
-  deleteButton.addEventListener("click", function () {
+  deleteButton.addEventListener("click", () => {
     if (confirm("من جدك تبغا تحذفها؟")) {
       removeNote(note.id);
       localStorage.setItem("notes", JSON.stringify(notes));
@@ -124,7 +124,7 @@ const renderNotesDOM = function (note) {
 
 // remove Note
 
-const removeNote = function (id) {
+const removeNote = (id) => {
   const noteIndex = notes.findIndex((note) => {
     return note.id === id;
   });
