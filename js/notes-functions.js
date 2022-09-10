@@ -1,3 +1,4 @@
+"use strict";
 // get saved notes from localStroage
 
 const savedNotes = () => {

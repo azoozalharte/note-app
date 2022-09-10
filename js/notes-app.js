@@ -1,3 +1,5 @@
+"use strict";
+
 const notes = savedNotes();
 const filters = {
   searchFillter: "",

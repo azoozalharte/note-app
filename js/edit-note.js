@@ -1,3 +1,5 @@
+"use strict";
+
 moment.locale("ar_SA");
 const noteId = location.hash.substr(1);
 const notes = savedNotes();

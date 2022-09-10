@@ -1,3 +1,5 @@
+"use strict";
+
 const noteId = location.hash.substr(1);
 const notes = savedNotes();
 
