@@ -3,9 +3,9 @@
 const savedNotes = () => {
   // check if localStroge has notes
   const noteJSON = localStorage.getItem("notes");
-  if (noteJSON != null) {
-    return JSON.parse(noteJSON);
-  } else {
+  try {
+    return noteJSON != null ? JSON.parse(noteJSON) : [];
+  } catch (e) {
     return [];
   }
 };
@@ -129,9 +129,5 @@ const removeNote = (id) => {
     return note.id === id;
   });
 
-  if (noteIndex > -1) {
-    notes.splice(noteIndex, 1);
-  } else {
-    console.log(noteIndex);
-  }
+  return noteIndex > -1 ? notes.splice(noteIndex, 1) : console.log(noteIndex);
 };
